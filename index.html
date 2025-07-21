@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Utopia online market</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpg" href="image-index/online-store.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  </head>
+  <body>
+    
+    <nav class="navbar">
+  <div class="logo">Utopia</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+
+
+
+  <!-- Button to open popup -->
+<button  class="auth-btn" onclick="openPopup()">Login / Register</button>
+
+<div id="authPopup" class="popup center-popup">
+  <span class="close-btn" onclick="closePopup()">×</span>
+
+  <div class="tabs">
+    <button onclick="showTab('login')">Login</button>
+    <button onclick="showTab('register')">Register</button>
+  </div>
+
+  <!-- Login Tab -->
+  <div id="loginTab" class="tab-content">
+    <h2>Login</h2>
+    <input type="text" placeholder="Username">
+    <input type="password" placeholder="Password">
+    <button>Login</button>
+  </div>
+
+  <!-- Register Tab -->
+  <div id="registerTab" class="tab-content" style="display: none;">
+    <h2>Register</h2>
+    <input type="text" placeholder="Username">
+    <input type="email" placeholder="Email">
+    <input type="password" placeholder="Password">
+    <button>Register</button>
+  </div>
+</div>
+
+  
+  <div id="cart-icon" onclick="showCart()" style="cursor: pointer;">
+  🛒 Cart (<span id="cart-count">0</span>)
+</div>
+ <div id="cart-popup" style="display: none;">
+  <h2>🛒 Cart</h2>
+  <ul id="cart-items"></ul>
+  <p><strong>Total:</strong> $<span id="cart-total">0.00</span></p>
+  <button onclick="closeCart()">Close</button>
+</div>
+</div>
+</nav>
+
+
+
+
+      <div class="product-grid">
+  <!-- Product 1 -->
+  <div class="product-card">
+    <div class="product-content">
+      <img src="image-index/nati.jpg" alt="Bike 1" />
+      <h3>Mountain Bike X</h3>
+      <p>High performance off-road bike with 21-speed gears.</p>
+      <div class="price">$499.99</div>
+      <div class="rating">⭐️⭐️⭐️⭐️☆ (120)</div>
+      <div class="actions">
+        <button class="like-btn">❤️</button>
+        <button class="share-btn">🔗</button>
+        <button class="rate-btn">⭐️</button>
+      </div>
+      <button class="cart-btn" onclick="addToCart('Mountain Bike X' , 499.99)">🛒 Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- Product 2 -->
+  <div class="product-card">
+    <div class="product-content">
+      <img src="image-index/hh.jpg" alt="Bike 2" />
+      <h3>City Cruiser Z</h3>
+      <p>Comfortable city bike, perfect for everyday rides.</p>
+      <div class="price">$399.00</div>
+      <div class="rating">⭐️⭐️⭐️⭐️⭐️ (250)</div>
+      <div class="actions">
+        <button class="like-btn">❤️</button>
+        <button class="share-btn">🔗</button>
+        <button class="rate-btn">⭐️</button>
+      </div>
+      <button class="cart-btn" onclick="addToCart('City Cruiser Z' , 399.00)">🛒 Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+
+      <div class="product-grid">
+  <!-- Product 3 -->
+  <div class="product-card">
+    <div class="product-content">
+      <img src="image-index/download (24).jpg" alt="Bike 1" />
+      <h3>Nike hoody</h3>
+      <p>High performance off-road bike with 21-speed gears.</p>
+      <div class="price">$120.00</div>
+      <div class="rating">⭐️⭐️⭐️⭐️☆ (120)</div>
+      <div class="actions">
+        <button class="like-btn">❤️</button>
+        <button class="share-btn">🔗</button>
+        <button class="rate-btn">⭐️</button>
+      </div>
+      <button class="cart-btn" onclick="addToCart('Nike hoody' , 120.00)">🛒 Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- Product 4 -->
+  <div class="product-card">
+    <div class="product-content">
+      <img src="image-index/img.jpg" alt="Bike 2" />
+      <h3> Nike short</h3>
+      <p>Comfortable city bike, perfect for everyday rides.</p>
+      <div class="price">$59.99</div>
+      <div class="rating">⭐️⭐️⭐️⭐️⭐️ (250)</div>
+      <div class="actions">
+        <button class="like-btn">❤️</button>
+        <button class="share-btn">🔗</button>
+        <button class="rate-btn">⭐️</button>
+      </div>
+      <button class="cart-btn" onclick="addToCart('Nike short' , 59.99)">🛒 Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+  <div class="product-grid">
+  <!-- Product 1 -->
+  <div class="product-card">
+    <div class="product-content">
+      <img src="image-index/nati.jpg" alt="Bike 1" />
+      <h3>Mountain Bike X</h3>
+      <p>High performance off-road bike with 21-speed gears.</p>
+      <div class="price">$499.99</div>
+      <div class="rating">⭐️⭐️⭐️⭐️☆ (120)</div>
+      <div class="actions">
+        <button class="like-btn">❤️</button>
+        <button class="share-btn">🔗</button>
+        <button class="rate-btn">⭐️</button>
+      </div>
+      <button class="cart-btn" onclick="addToCart('Mountain Bike X' , 499.99)">🛒 Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- Product 2 -->
+  <div class="product-card">
+    <div class="product-content">
+      <img src="image-index/hh.jpg" alt="Bike 2" />
+      <h3>City Cruiser Z</h3>
+      <p>Comfortable city bike, perfect for everyday rides.</p>
+      <div class="price">$399.00</div>
+      <div class="rating">⭐️⭐️⭐️⭐️⭐️ (250)</div>
+      <div class="actions">
+        <button class="like-btn">❤️</button>
+        <button class="share-btn">🔗</button>
+        <button class="rate-btn">⭐️</button>
+      </div>
+      <button class="cart-btn" onclick="addToCart('City Cruiser Z' , 399.00)">🛒 Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+
+      <div class="product-grid">
+  <!-- Product 3 -->
+  <div class="product-card">
+    <div class="product-content">
+      <img src="image-index/download (24).jpg" alt="Bike 1" />
+      <h3>Nike hoody</h3>
+      <p>High performance off-road bike with 21-speed gears.</p>
+      <div class="price">$120.00</div>
+      <div class="rating">⭐️⭐️⭐️⭐️☆ (120)</div>
+      <div class="actions">
+        <button class="like-btn">❤️</button>
+        <button class="share-btn">🔗</button>
+        <button class="rate-btn">⭐️</button>
+      </div>
+      <button class="cart-btn" onclick="addToCart('Nike hoody' , 120.00)">🛒 Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- Product 4 -->
+  <div class="product-card">
+    <div class="product-content">
+      <img src="image-index/img.jpg" alt="Bike 2" />
+      <h3> Nike short</h3>
+      <p>Comfortable city bike, perfect for everyday rides.</p>
+      <div class="price">$59.99</div>
+      <div class="rating">⭐️⭐️⭐️⭐️⭐️ (250)</div>
+      <div class="actions">
+        <button class="like-btn">❤️</button>
+        <button class="share-btn">🔗</button>
+        <button class="rate-btn">⭐️</button>
+      </div>
+      <button class="cart-btn" onclick="addToCart('Nike short' , 59.99)">🛒 Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+  <div class="product-grid">
+  <!-- Product 1 -->
+  <div class="product-card">
+    <div class="product-content">
+      <img src="image-index/nati.jpg" alt="Bike 1" />
+      <h3>Mountain Bike X</h3>
+      <p>High performance off-road bike with 21-speed gears.</p>
+      <div class="price">$499.99</div>
+      <div class="rating">⭐️⭐️⭐️⭐️☆ (120)</div>
+      <div class="actions">
+        <button class="like-btn">❤️</button>
+        <button class="share-btn">🔗</button>
+        <button class="rate-btn">⭐️</button>
+      </div>
+      <button class="cart-btn" onclick="addToCart('Mountain Bike X' , 499.99)">🛒 Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- Product 2 -->
+  <div class="product-card">
+    <div class="product-content">
+      <img src="image-index/hh.jpg" alt="Bike 2" />
+      <h3>City Cruiser Z</h3>
+      <p>Comfortable city bike, perfect for everyday rides.</p>
+      <div class="price">$399.00</div>
+      <div class="rating">⭐️⭐️⭐️⭐️⭐️ (250)</div>
+      <div class="actions">
+        <button class="like-btn">❤️</button>
+        <button class="share-btn">🔗</button>
+        <button class="rate-btn">⭐️</button>
+      </div>
+      <button class="cart-btn" onclick="addToCart('City Cruiser Z' , 399.00)">🛒 Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+
+      <div class="product-grid">
+  <!-- Product 3 -->
+  <div class="product-card">
+    <div class="product-content">
+      <img src="image-index/download (24).jpg" alt="Bike 1" />
+      <h3>Nike hoody</h3>
+      <p>High performance off-road bike with 21-speed gears.</p>
+      <div class="price">$120.00</div>
+      <div class="rating">⭐️⭐️⭐️⭐️☆ (120)</div>
+      <div class="actions">
+        <button class="like-btn">❤️</button>
+        <button class="share-btn">🔗</button>
+        <button class="rate-btn">⭐️</button>
+      </div>
+      <button class="cart-btn" onclick="addToCart('Nike hoody' , 120.00)">🛒 Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- Product 4 -->
+  <div class="product-card">
+    <div class="product-content">
+      <img src="image-index/img.jpg" alt="Bike 2" />
+      <h3> Nike short</h3>
+      <p>Comfortable city bike, perfect for everyday rides.</p>
+      <div class="price">$59.99</div>
+      <div class="rating">⭐️⭐️⭐️⭐️⭐️ (250)</div>
+      <div class="actions">
+        <button class="like-btn">❤️</button>
+        <button class="share-btn">🔗</button>
+        <button class="rate-btn">⭐️</button>
+      </div>
+      <button class="cart-btn" onclick="addToCart('Nike short' , 59.99)">🛒 Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+
+
+ <!-- About Section -->
+  <section id="about" class="section about">
+    <h2>About Us</h2>
+    <p>At <strong>Utopia</strong>, we are dedicated to bringing you the best online shopping experience. 
+    From premium products to fast delivery and reliable service, we aim to make your life easier, stylish, and more convenient.</p>
+
+    <div class="features">
+      <div class="feature">
+        <img src="image-index/store.png" alt="Store Icon">
+        <h3>Our Store</h3>
+        <p>Top-quality products for all lifestyles and budgets.</p>
+      </div>
+      <div class="feature">
+        <img src="image-index/delivery-truck.png" alt="Shipping Icon">
+        <h3>Fast Shipping</h3>
+        <p>Quick and reliable delivery to your doorstep.</p>
+      </div>
+      <div class="feature">
+        <img src="image-index/customer-service.png" alt="Support Icon">
+        <h3>Best Support</h3>
+        <p>We’re here to help you anytime, anywhere.</p>
+      </div>
+      <div class="feature">
+        <img src="image-index/credit-card.png" alt="Secure Payment">
+        <h3>Secure Payment</h3>
+        <p>Your data and payments are always protected.</p>
+      </div>
+    </div>
+  </section>
+
+<!-- Contact Section -->
+<section id="contact" class="section contact-section">
+  <div class="contact-content">
+    <div class="contact-text">
+      <h2>Contact Us</h2>
+      <p>Have a question or need assistance? Feel free to reach out to us. At Utopia, we are here to help you.</p>
+
+      <div class="contact-row">
+        <div class="contact-box">
+          <img src="image-index/email.png" alt="Email Icon">
+          <div>
+            <h4>Email Us</h4>
+            <p>info@utopia.com</p>
+          </div>
+        </div>
+        <div class="contact-box">
+          <img src="image-index/phone-call.png" alt="Phone Icon">
+          <div>
+            <h4>Call Us</h4>
+            <p>+1 (234) 567-8900</p>
+          </div>
+        </div>
+        <div class="contact-box">
+          <img src="image-index/maps-and-flags.png" alt="Location Icon">
+          <div>
+            <h4>Location</h4>
+            <p>1234 Example St, City, State 12345</p>
+          </div>
+        </div>
+        <div class="contact-box">
+          <img src="image-index/advertising.png" alt="Social Media Icon">
+          <div>
+            <h4>Follow Us</h4>
+            <p>@utopia_market</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-image">
+      <img src="image-index/e1325f92-4796-4cff-af87-d79e2bba7062.png" alt="Contact Illustration">
+    </div>
+  </div>
+</section>
+ 
+
+
+
+
+<script src="script.js"></script>
+  </body>
+</html>
